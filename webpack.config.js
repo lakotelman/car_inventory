@@ -25,6 +25,12 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(jpg|png|webp|svg)$/,
+        use: {
+          loader: "url-loader",
+        },
+      },
     ],
   },
 };
