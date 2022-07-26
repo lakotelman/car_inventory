@@ -4,6 +4,7 @@ import CarList from "./Carlist";
 import Inventory from "../views/Inventory";
 import Profile from "../views/Profile";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import InventorySingle from "../views/InventorySingle";
 
 export default function Navbar() {
   return (
@@ -29,14 +30,17 @@ export default function Navbar() {
                 <Link to="">Login</Link>
               </li>
               <li>
-                <Link to="">Register</Link>
+                <Link to="/inventory/1">Register</Link>
               </li>
             </ul>
           </div>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/inventory" element={<Inventory />} />
+          <Route path="inventory">
+            <Route path=":id" element={<InventorySingle />} />
+            <Route path="" element={<Inventory />} />
+          </Route>
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
