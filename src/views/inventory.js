@@ -1,5 +1,5 @@
 import React from "react";
-import CarList from "../components/carlist";
+import CarList from "../components/Carlist";
 
 export default function Inventory() {
   return (
