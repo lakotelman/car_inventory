@@ -1,5 +1,6 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/index.js",
@@ -8,13 +9,15 @@ module.exports = {
     filename: "bundle.js",
   },
   devServer: {
+    static: path.resolve(__dirname, "./dist"),
+    hot: true,
+    open: true,
     historyApiFallback: true,
+
   },
 
   plugins: [
-    new HTMLWebpackPlugin({
-      template: "./src/index.html",
-    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [

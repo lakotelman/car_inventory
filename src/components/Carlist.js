@@ -16,7 +16,7 @@ export default function CarList() {
 
   return (
     <>
-      <div class="cardGrid">
+      <div className="cardGrid">
         {cars.map((car, index) => (
           <Car car={car} key={index} />
         ))}
