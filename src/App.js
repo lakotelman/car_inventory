@@ -1,14 +1,16 @@
 import React, { Component } from "react";
+import "./styles.css";
+import CarList from "./components/Carlist.js";
 import FoxPic from "./assets/images/FoxPic.jpg";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
 
 export default function App() {
   {
     return (
-      <div>
-        <h1>Hey there.</h1>
-        <img src={FoxPic} />
-      </div>
+      <>
+        <Navbar />
+      </>
     );
   }
 }
