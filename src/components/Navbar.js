@@ -5,8 +5,11 @@ import Inventory from "../views/Inventory";
 import Profile from "../views/Profile";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import InventorySingle from "../views/InventorySingle";
+import { AuthContext } from "../contexts/AuthProvider";
+import { useContext } from "react";
 
 export default function Navbar() {
+  const { user, login, logout } = useContext(AuthContext);
   return (
     <>
       <Router>
@@ -26,12 +29,13 @@ export default function Navbar() {
           </div>
           <div>
             <ul>
-              <li>
-                <Link to="">Login</Link>
-              </li>
-              <li>
-                <Link to="/inventory/1">Register</Link>
-              </li>
+            { (user.loggedIn) ?
+            <li>
+              <button onClick={logout}>Logout</button>
+            </li>:
+            <li>
+              <button onClick={login}>Login</button>
+            </li>}
             </ul>
           </div>
         </nav>
