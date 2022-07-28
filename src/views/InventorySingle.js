@@ -22,8 +22,8 @@ export default function InventorySingle() {
     <>
       {postState === "Loaded" ? (
         <>
-          <h1>This is a single blog</h1>
-          <Post post={car} hideLink={true} />
+          <h1>🚙</h1>
+          <Car car={car} hideLink={true} />
         </>
       ) : (
         <p>Loading</p>

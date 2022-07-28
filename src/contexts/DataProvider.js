@@ -42,7 +42,7 @@ export const DataProvider = (props) => {
   };
   const values = {
     cars,
-    getSingleCar
+    getSingleCar,
   };
   return (
     <DataContext.Provider value={values}>{props.children}</DataContext.Provider>
